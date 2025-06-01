@@ -1,6 +1,6 @@
 import sys
 import os
-from sqlalchemy.orm import Session
+import sys
 from datetime import datetime, timedelta
 import random
 
@@ -30,9 +30,7 @@ def create_test_data():
             db.refresh(test_user)
             print(f"Usuario creado: {test_user.email}")
         else:
-            print(f"Usuario existente: {test_user.email}")
-
-        # Crear dispositivo de prueba
+            print(f"Usuario existente: {test_user.email}")        # Crear dispositivo de prueba
         test_device = db.query(Device).filter(Device.device_id == "ESP32_001").first()
         if not test_device:
             test_device = Device(
@@ -40,7 +38,7 @@ def create_test_data():
                 device_id="ESP32_001",
                 description="Dispositivo para pruebas de la aplicación",
                 vehicle_type="auto",
-                user_id=test_user.id,
+                owner_id=test_user.id,
                 is_active=True,
                 security_mode=True
             )
