@@ -23,7 +23,7 @@ class UserResponse(UserBase):
     created_at: datetime
     
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 # Esquemas para Autenticación
 class Token(BaseModel):
@@ -63,7 +63,7 @@ class DeviceResponse(DeviceBase):
     created_at: datetime
     
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 class DeviceModeResponse(BaseModel):
     device_id: str
@@ -88,7 +88,7 @@ class LocationResponse(LocationBase):
     timestamp: datetime
     
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 # Esquemas para Alertas
 class AlertBase(BaseModel):
@@ -115,7 +115,7 @@ class AlertResponse(AlertBase):
     timestamp: datetime
     
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 # Esquemas para respuestas con paginación
 class PaginatedResponse(BaseModel):
